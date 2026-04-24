@@ -1,3 +1,10 @@
+FROM node:20-alpine as node_build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
 FROM php:8.4-apache
 
 RUN apt-get update && apt-get install -y \
@@ -12,7 +19,6 @@ RUN apt-get update && apt-get install -y \
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-
 RUN docker-php-ext-install pdo_sqlite mbstring exif pcntl bcmath gd
 RUN a2enmod rewrite
 
@@ -22,6 +28,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 COPY . /var/www/html
+
+COPY --from=node_build /app/public/build /var/www/html/public/build
 
 RUN composer install --no-interaction --optimize-autoloader --no-dev
 
