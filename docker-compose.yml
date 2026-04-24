@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: hyoshcoder-app
+    container_name: hyoshcoder-app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - hyosh-network
+
+  web:
+    image: nginx:alpine
+    container_name: hyoshcoder-web
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./.docker/nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - hyosh-network
+    depends_on:
+      - app
+
+networks:
+  hyosh-network:
+    driver: bridge
