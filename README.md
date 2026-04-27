@@ -87,6 +87,4 @@ Cette documentation résume l’interface présentée dans la vidéo ainsi que l
 <https://loom.com/share/a8c092dad6af4163b902957c2206c43d>
 
 - Demo du projet : [https://hyoshcode.koyeb.app/](https://hyoshcode.koyeb.app/)
-- Admin : [https://hyoshcode.koyeb.app/login](https://hyoshcode.koyeb.app/login) avec les identifiants suivants :
-  - Nom d’utilisateur : <vincentkaleba@gmail.com>
-  - Mot de passe : [REDACTED]
+- Admin : [https://hyoshcode.koyeb.app/login](https://hyoshcode.koyeb.app/login)
