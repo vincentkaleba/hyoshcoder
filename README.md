@@ -1,58 +1,92 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Documentation de l’interface et du flux d’authentification
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### Overview
 
-## About Laravel
+Cette documentation résume l’interface présentée dans la vidéo ainsi que les principales parties du projet : page d’accueil, formulaire de contact, messages de retour, et routes d’authentification. Elle met aussi en évidence l’organisation générale du code avec les composants, les modèles, les contrôleurs et les routes protégées.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+ 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Présentation de l’interface** [0:25](https://loom.com/share/a8c092dad6af4163b902957c2206c43d?t=25)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![generated-image-at-00:00:25](https://loom.com/i/fc8aeb83cf5d4750a4febeadef65b2f4?workflows_screenshot=true)
 
-## Learning Laravel
+- L’interface regroupe plusieurs sections visibles dès l’accueil.
+- On y retrouve notamment :
+  - une section de présentation,
+  - une section sur l’expérience,
+  - une section sur les langages et technologies,
+  - une section contact,
+  - une section projet.
+- La structure semble pensée pour présenter le contenu de manière claire et directe.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+ 
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Formulaire de contact et envoi du message** [1:45](https://loom.com/share/a8c092dad6af4163b902957c2206c43d?t=105)
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+![generated-image-at-00:01:45](https://loom.com/i/8f808622f62a425aad3c9aa9b7900a9f?workflows_screenshot=true)
 
-## Agentic Development
+- Le projet inclut un formulaire de contact.
+- Les champs attendus sont :
+  - `name`
+  - `email`
+  - `subject`
+  - `message`
+- Après soumission, un message de confirmation s’affiche pour indiquer que le message a été envoyé avec succès.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+ 
 
-```bash
-composer require laravel/boost --dev
+**Affichage du message de succès** [2:38](https://loom.com/share/a8c092dad6af4163b902957c2206c43d?t=158)
 
-php artisan boost:install
-```
+![generated-image-at-00:02:38](https://loom.com/i/3b6775abb84f43288efae23d438bba35?workflows_screenshot=true)
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+- Une zone dédiée permet de voir le retour après l’envoi du formulaire.
+- Le message de succès confirme que l’action a bien été prise en compte.
+- Cette partie améliore le retour utilisateur après soumission.
 
-## Contributing
+ 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Modèles et structure des données** [3:39](https://loom.com/share/a8c092dad6af4163b902957c2206c43d?t=219)
 
-## Code of Conduct
+![generated-image-at-00:03:39](https://loom.com/i/0e177449ca214ccc9fe2538140d8997b?workflows_screenshot=true)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Le projet utilise des modèles pour organiser les données.
+- Un modèle de contact est mentionné pour gérer les informations du formulaire.
+- La structure semble centrée sur la validation et la persistance des données envoyées.
 
-## Security Vulnerabilities
+ 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**Contrôleurs et validation** [4:27](https://loom.com/share/a8c092dad6af4163b902957c2206c43d?t=267)
 
-## License
+![generated-image-at-00:04:27](https://loom.com/i/46984848f75b4b6b80f9f76e9df77392?workflows_screenshot=true)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Les contrôleurs gèrent la logique liée à la connexion et au traitement des données.
+- Ils prennent aussi en charge la validation du formulaire.
+- Cette séparation permet de distinguer clairement la logique métier de l’interface.
+
+ 
+
+**Routes d’authentification** [5:39](https://loom.com/share/a8c092dad6af4163b902957c2206c43d?t=339)
+
+![generated-image-at-00:05:39](https://loom.com/i/fe42ba19fa9b4d7e800c17215cc59501?workflows_screenshot=true)
+
+- Le projet expose des routes dédiées à l’authentification :
+  - `login` pour la connexion,
+  - `logout` pour la déconnexion.
+- Ces routes servent à gérer l’accès à certaines parties de l’application.
+
+ 
+
+**Routes protégées et accès administrateur** [6:04](https://loom.com/share/a8c092dad6af4163b902957c2206c43d?t=364)
+
+![generated-image-at-00:06:04](https://loom.com/i/56590d72fbe447f6beef98a6865c3057?workflows_screenshot=true)
+
+- Certaines routes sont protégées par un middleware.
+- Ce mécanisme limite l’accès aux utilisateurs autorisés.
+- Un lien vers l’administration est également présent dans l’application.
+
+<https://loom.com/share/a8c092dad6af4163b902957c2206c43d>
+
+- Demo du projet : [https://hyoshcode.koyeb.app/](https://hyoshcode.koyeb.app/)
+- Admin : [https://hyoshcode.koyeb.app/login](https://hyoshcode.koyeb.app/login) avec les identifiants suivants :
+  - Nom d’utilisateur : <vincentkaleba@gmail.com>
+  - Mot de passe : [REDACTED]
