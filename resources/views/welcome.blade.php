@@ -24,11 +24,11 @@
                         <text x="50" y="150" class="text-path" font-size="190" transform="rotate(-6, 100, 150)">P</text>
                         <text x="180" y="175" class="text-path" font-size="175" transform="rotate(8, 230, 175)">O</text>
                         <text x="320" y="145" class="text-path" font-size="195" transform="rotate(-4, 370, 145)">R</text>
-                        
+
                         <g transform="translate(520, 20) rotate(5, 75, 75)">
                             <path d="M50 0 H100 V50 H150 V100 H100 V160 H50 V100 H0 V50 H50 Z" fill="#000" />
                         </g>
-                        
+
                         <!-- Row 2: FOLIO -->
                         <text x="130" y="340" class="text-path" font-size="190" transform="rotate(-5, 170, 340)">F</text>
                         <text x="260" y="360" class="text-path" font-size="175" transform="rotate(6, 300, 360)">O</text>
@@ -38,7 +38,7 @@
                     </svg>
                     <span class="hero-year-tag">'4</span>
                 </div>
-                
+
                 <img src="{{ asset('images/hero.png') }}" alt="Hyosh Coder" class="hero-image-large">
                 <p class="hero-sub-name">Hyosh Coder</p>
             </div>
@@ -102,8 +102,8 @@
                                 <div class="bio-item">
                                     <h4>Social</h4>
                                     <p>
-                                        <a href="https://x.com/vincentkaleba" target="_blank" style="color: inherit; text-decoration: none;">X</a> / 
-                                        <a href="https://github.com/vincentkaleba" target="_blank" style="color: inherit; text-decoration: none;">GitHub</a> / 
+                                        <a href="https://x.com/vincentkaleba" target="_blank" style="color: inherit; text-decoration: none;">X</a> /
+                                        <a href="https://github.com/vincentkaleba" target="_blank" style="color: inherit; text-decoration: none;">GitHub</a> /
                                         <a href="https://linkedin.com/in/vincentkaleba" target="_blank" style="color: inherit; text-decoration: none;">LinkedIn</a>
                                     </p>
                                 </div>
@@ -178,23 +178,23 @@
         // Floating Code Symbols Generation
         const codeBg = document.getElementById('codeBg');
         const symbols = ['{', '}', '<', '>', '/', ';', '=>', '[', ']', '(', ')', '&&', '||', '!='];
-        
+
         function createSymbol() {
             const el = document.createElement('div');
             el.className = 'floating-symbol';
             el.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-            
+
             const startX = Math.random() * 100;
             const duration = 15 + Math.random() * 15;
             const size = 0.8 + Math.random() * 1.5;
-            
+
             el.style.left = `${startX}%`;
             el.style.animationDuration = `${duration}s`;
             el.style.fontSize = `${size}rem`;
             el.style.opacity = Math.random() * 0.5 + 0.2;
-            
+
             codeBg.appendChild(el);
-            
+
             setTimeout(() => {
                 el.remove();
             }, duration * 1000);
@@ -207,7 +207,6 @@
 
     <footer style="padding: 100px 0; text-align: center; color: #888;">
         <p>&copy; 2025 Hyosh Coder. Tous droits réservés. Développé et maintenue Vincent Kaleba.</p>
-        <p style="margin-top: 1rem;"><a href="{{ route('projects.index') }}" style="color: #ccc; text-decoration: none; font-size: 0.8rem;">Tableau de bord Admin</a></p>
     </footer>
 </body>
 </html>
